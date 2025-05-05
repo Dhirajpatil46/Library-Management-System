@@ -1,5 +1,7 @@
 
-Library Management System (Spring Boot + Thymeleaf)
+=====================================================
+Library Management System (SpringBoot + Thymeleaf)
+=====================================================
 
 A web-based Library Management System built using Spring Boot MVC, Thymeleaf, and Oracle 19c. This system includes two user roles: Admin and User, with different access and functionality.
 
@@ -84,11 +86,8 @@ Tech Stack
 How to Run
 =====================================================
 
-1. Clone the Repository:
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
 
-2. Configure application.properties:
+1. Configure application.properties:
    ----------------------------------
    spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
    spring.datasource.username=your_db_user
@@ -99,10 +98,10 @@ How to Run
    spring.jpa.hibernate.ddl-auto=update
    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect
 
-3. Build & Run:
+2. Build & Run:
    ./mvnw spring-boot:run
 
-4. Access in Browser:
+3. Access in Browser:
    http://localhost:8080/
 
 =====================================================
