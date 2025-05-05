@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Spring Boot Data JPA (Thymeleaf)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            width: 90%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+        }
+
+        h1 {
+            font-size: 34px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block; /* Makes the buttons sit side-by-side */
+            padding: 14px 25px;
+            margin: 10px; /* Adds some spacing between buttons */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Removes underlines from links */
+            transition: background-color 0.3s ease;
+            color: white; /* Text color for buttons */
+        }
+
+        .btn-primary {
+            background-color: #3498db; /* Blue button */
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
+        .btn-secondary {
+            background-color: #2ecc71; /* Green button */
+        }
+
+        .btn-secondary:hover {
+            background-color: #27ae60; /* Darker green on hover */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cloud and purple overlay styles (same as before) */
+        .cloud-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23673ab7" fill-opacity="1" d="M0,224L48,192C96,160,192,96,288,106.7C384,117,480,171,576,186.7C672,203,768,181,864,192C960,203,1056,245,1152,224C1248,203,1344,139,1392,106.7L1440,75L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"%3E%3C/path%3E%3C/svg%3E'); /* Purple wave SVG */
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1; /* Place behind the content */
+            opacity: 0.7; /* Adjust opacity for desired effect */
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Needed for positioning the cloud overlay */
+            z-index: 1; /* Ensure form is above the cloud */
+        }
+    </style>
+</head>
+<body> 
+    <div class="cloud-overlay"></div>
+    <div class="container form-container">
+        <p>Welcome BookVerse Library</p>
+
+        <div>
+        	<a href="AdminLogin" class="btn btn-primary">Admin</a>
+            <a href="loginPage" class="btn btn-secondary">User</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Dhiraj Patil. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>

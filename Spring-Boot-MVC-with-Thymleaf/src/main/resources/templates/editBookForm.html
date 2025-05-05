@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-btn {
+            margin-top: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cancel-btn:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Book Details</h1>
+
+    <form th:action="@{/updateBook}" th:object="${book}" method="post">
+        <label>Book ID</label>
+        <input type="text" th:field="*{bookId}" readonly />
+
+        <label>Title</label>
+        <input type="text" th:field="*{title}" />
+
+        <label>Author</label>
+        <input type="text" th:field="*{author}" />
+
+        <label>Published Year</label>
+        <input type="number" th:field="*{publishedYear}" />
+
+        <label>Quantity</label>
+        <input type="number" th:field="*{quantity}" />
+
+        <label>Price</label>
+        <input type="number" th:field="*{price}" step="0.01" />
+
+        <input type="submit" value="Update Book" />
+    </form>
+
+    <form th:action="@{/viewBooks}" method="get">
+        <input type="submit" class="cancel-btn" value="Cancel" />
+    </form>
+</div>
+
+</body>
+</html>

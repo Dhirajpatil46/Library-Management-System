@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Here</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (optional for future use) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #d3f9d8; /* Light green background */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333333;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            padding: 50px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid white; /* White border */
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #4CAF50; /* Dark green color for the heading */
+        }
+
+        a.btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 12px 25px;
+            background-color: #d3f9d8; /* Light green button */
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 2px solid #4CAF50; /* Dark green border */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        a.btn:hover {
+            background-color: #4CAF50; /* Darker green on hover */
+            color: #fff;
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to BookVerse</h1>
+        <a href="loginPage1" class="btn">Login</a>
+        <a href="regpage" class="btn">Register</a>
+    </div>
+</body> 
+</html>

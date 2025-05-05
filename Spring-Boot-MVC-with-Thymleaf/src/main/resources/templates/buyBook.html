@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+        .container {
+            background: #fff;
+            padding: 25px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .book-info {
+            margin: 20px 0;
+        }
+        label, p {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 20px 0;
+            box-sizing: border-box;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Buy Book</h2>
+
+    <div class="book-info">
+        <p><strong>Book ID:</strong> <span th:text="${book.bookId}"></span></p>
+        <p><strong>Title:</strong> <span th:text="${book.title}"></span></p>
+        <p><strong>Author:</strong> <span th:text="${book.author}"></span></p>
+        <p><strong>Published Year:</strong> <span th:text="${book.publishedYear}"></span></p>
+        <p><strong>Available Quantity:</strong> <span th:text="${book.quantity}"></span></p>
+        <p><strong>Price:</strong> <span th:text="${book.price}"></span></p>
+    </div>
+
+    <form th:action="@{/submitBuy}" method="post">
+        <input type="hidden" name="bookId" th:value="${book.bookId}" />
+        <label for="quantity">Buy Quantity:</label>
+        <input type="number" name="quantity" min="1" max="999" required />
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

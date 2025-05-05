@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffe5b4; /* Peach background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #000;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #cc7722; /* Darker peach */
+        }
+
+        .main-button {
+            background-color: #ffe5b4;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 12px 0;
+            display: inline-block;
+            width: 60%;
+            margin: 20px auto;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .main-button:hover {
+            background-color: #ffd092;
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        a {
+            background-color: #ffe5b4;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 12px 0;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+        }
+
+        a:hover {
+            background-color: #ffd092;
+            transform: scale(1.05);
+        }
+
+        a i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi <span th:text="${msg1}"></span></h1>
+        <h1>Welcome to BookVerse Library</h1>
+
+        <!-- Centered "View Available Books" button -->
+        <a href="viewBooks" class="main-button"><i class="fas fa-book"></i>View Available Books</a>
+
+        <div class="button-container">
+            <a href="index.html"><i class="fas fa-house"></i>Home</a>
+            <a href="logout"><i class="fas fa-right-from-bracket"></i>Logout</a>
+        </div>
+    </div>
+</body>
+</html>

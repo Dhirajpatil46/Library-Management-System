@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00d4ff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #00d4ff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #00d4ff;
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00a3cc;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 80%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register Here</h2>
+        <form th:action="@{/regForm}" th:object="${user}" method="post">
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" placeholder="Enter your name" required />
+
+            <label>Email:</label>
+            <input type="email" th:field="*{mail}" placeholder="Enter your email" required />
+
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" placeholder="Enter your password" required />
+
+            <label>Phone No:</label>
+            <input type="text" th:field="*{phoneno}" placeholder="Enter your phone number" required />
+
+            <input type="submit" value="Register" />
+        </form>
+    </div>
+</body>
+</html>

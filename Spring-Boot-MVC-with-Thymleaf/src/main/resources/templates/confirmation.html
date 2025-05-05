@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Confirmation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #00d4ff;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #00d4ff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #00a3cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div th:if="${msg1}">
+            <h2 th:text="${msg1}"></h2>
+        </div>
+
+        <div th:if="${msg2}">
+            <h2 th:text="${msg2}"></h2>
+        </div>
+
+        <a href="/index.html">Home</a>
+    </div>
+</body>
+</html>

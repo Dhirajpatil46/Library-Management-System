@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Book</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #cc7722;
+            margin-bottom: 20px;
+        }
+
+        .success-msg {
+            text-align: center;
+            color: green;
+            margin-bottom: 15px;
+        }
+
+        .msg {
+            text-align: center;
+            color: red;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #cc7722;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b65c15;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button-group a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-btn {
+            background-color: #007bff;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+        }
+
+        .profile-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn:hover {
+            background-color: #a30000;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div th:if="${msg2}" class="msg">
+            <h2 th:text="${msg2}"></h2>
+        </div>
+        
+        <h1>Add New Book</h1>
+        <div class="success-msg" th:if="${msg1}" th:text="${msg1}"></div>
+
+        <form th:action="@{/addBook}" th:object="${book}" method="post">
+            <label>Book ID</label>
+            <input type="number" th:field="*{bookId}" required />
+
+            <label>Title</label>
+            <input type="text" th:field="*{title}" required />
+
+            <label>Author</label>
+            <input type="text" th:field="*{author}" required />
+
+            <label>Published Year</label>
+            <input type="number" th:field="*{publishedYear}" required />
+
+            <label>Quantity</label>
+            <input type="number" th:field="*{quantity}" required />
+
+            <label>Price</label>
+            <input type="number" th:field="*{price}" step="0.01" required />
+
+            <input type="submit" value="Add Book" />
+        </form>
+
+        <div class="button-group">
+            <a th:href="@{/adminProfile}" class="profile-btn">Profile</a>
+            <a th:href="@{/Logout1}" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
